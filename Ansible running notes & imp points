@@ -1,0 +1,44 @@
+what is collections & modules
+modules--small programs to excute specific tasks like installing packages on servers
+collections--collections are group of modules, roles & resources thqat can be used to automate set of tasks
+_____________________________________________________________________________________________________
+what is ansible?
+Ansible is an open-source IT automation tool developed by Red Hat that is used to manage  varioud IT NEEDS  SUCH as configuration management, application deployment, infrastructure provisioning, and orchestration. 
+It uses simple, human-readable YAML files called playbooks to describe automation jobs and operates in an agentless manner, communicating over SSH.
+
+Key Features:
+Agentless: No need to install software on managed nodes.
+
+YAML-based Playbooks: Easy-to-read configuration files.
+
+Idempotent: Ensures operations produce the same result even if run multiple times.
+
+Modules: Reusable, built-in, or custom code to perform tasks.
+
+Scalable: Can manage from a few machines to thousands.
+_________________________________________________________________________________________________________________
+read these definitions:
+Working with Remote Servers using Ansible
+Installation and Setup:
+Ansible is installed on a control node, also referred to as the Ansible Admin Node or Ansible Controller Node.
+Managed nodes do not require Ansible installation, just Python and SSH access.
+___________________________________________________________________________________________
+Connectivity and Communication:
+Ansible uses SSH for secure communication with remote servers (managed nodes). No additional SSH software installation is required on the
+managed nodes as they typically come with SSH by default.
+______________________________________________________________________________________________
+Agentless Nature:
+Being agentless, Ansible doesn't require any agent software to be installed on the remote nodes, making it lightweight and reducing
+management overhead.
+Example: If you have 100 servers to manage, you don't need to install Ansible on all of them. Only the control node needs Ansible installed.
+_____________________________________________________________________________
+Execution Model:
+Ansible operates on a "push model" where it pushes small programs, called modules, to the remote nodes to execute tasks.
+Each task is executed by the corresponding module on the remote server using the server's Python interpreter.
+Example: To update a package on all servers, Ansible pushes a package management module to each server, executes it using Python, then
+cleans up after the task is complete.
+________________________________________________________________________
+Push Model and Agentless Architecture:
+The push model ensures that changes are initiated from the control node, allowing for centralized management and execution of tasks.
+The agentless architecture simplifies setup and reduces the potential attack surface since there's no need to manage software agents on
+managed nodes.
