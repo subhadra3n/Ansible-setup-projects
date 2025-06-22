@@ -42,3 +42,7 @@ Push Model and Agentless Architecture:
 The push model ensures that changes are initiated from the control node, allowing for centralized management and execution of tasks.
 The agentless architecture simplifies setup and reduces the potential attack surface since there's no need to manage software agents on
 managed nodes.
+___________________________________________________________________________________________________________________________________
+Adhoc commands:
+run only single commands at a time
+if we want to run groups of commands-------playbooks comes to the picture
