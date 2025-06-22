@@ -1,0 +1,14 @@
+Ansible commands to run file/script
+
+1.ansible all -m ping -i inventory
+
+1st generate keys and copy those public  keys to nodes
+ssh-keygen
+copy public keys manually or ssh-copyid user@ip
+ssh user@ipadress
+
+_______________________________-
+give permissions to user
+vi sudo
+ansibleuser ALL=(ALL) ALL-----------add this in every node
+
