@@ -1,0 +1,3 @@
+1.Ansible is installed in only managerial/control node
+not req to install ansible in all agents---only python + ssH connection is enough---agentless 
+_______________________________________________________________________________________________________
