@@ -1,4 +1,6 @@
 Ansible commands to run file/script
+version--2.10
+vi /etc/hosts
 
 1.ansible all -m ping -i inventory
 
@@ -11,4 +13,21 @@ _______________________________-
 give permissions to user
 vi sudo
 ansibleuser ALL=(ALL) ALL-----------add this in every node
+
+ansible all -m ansible.bultin.command -a uptime------check uptime of servers-----which mention in inventory file
+ansible all -m command -a uptime---------we can also use this
+_________________________________________________________
+command modules----------we can't use pipe symbols, redirections etc----basic commands
+where as shell modules---------we can use pipe sysmbols and all------complex commands
+ansible all -m ansible.builtin.shell -a "free -mh"
+
+ansible all -m ansible.builtin.shell -a "free-mh | grep "mem"| tr -s ' '|cut -d: -f2"
+________________________________________________________________________________________-
+fork in ansible--------value------once any of those servers are completed ,it will pick the next server and start the tasks and so on, until the servers are handled--for parallel execution ---value defult is---5
+we can change to 10 also----------ansible hit the 10 servers and perform the tasks at the same time
+_____________________________________________________
+we dn't use high fork values------if your control node doesn't have enough resources(cpu,memory) or your n/w is limitedslow down everything or crash/freeze & lead to errors
+______________________________________________________________________________________
+file operations
+file modules,stat-complete details of files,copy,lineinfile--add/removes single line in a file,blockinfile,template modules--dynamic content , fetch------fetch files from remote m/cs to local m/c
 
