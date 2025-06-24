@@ -1,3 +1,6 @@
+
+idempotency--Ansible tasks are designed to be idempotent,they will only make changes if the desired state is not already present on the managed node
+/etc/ssh/sshd_config
 Ansible commands to run file/script
 version--2.10
 vi /etc/hosts
@@ -41,4 +44,21 @@ ansible all -m ansible.builtin.file-a "path=/temp/test state=touch mode='0755'"-
 state=absent-----uninstall
 
 ansible all -m ansible.builtin.stat -a "path=/etc/passwd"
+__________________________________________________________________________________________________
+copy modeule:copy files from control node to managed node
+ansible all -m ansible.builtin.copy -a "src=~/demo.sh dest=/temp/demo.sh mode='0644'"----------------demo.sh file copy to /tmp dir on all managed nodes with permissions
 
+path
+src
+dest
+__________________________________________________________________________________________________________________________________________________________-----------
+content=add this dest=/path
+lineinline---append, copy--override
+_____________________________________________________----
+download a file from all managed nodes to Ansible control node specifies directory
+ansible all -m  ansible.builtin.fetch -a "src=/tmp/demo.sh dest=/home/ansibleuser"
+___________________________________________
+installing packages:ansible all -m ansible.builtin.apt/yum -a "name=apache2 state=present"
+if we dn't know which packagemanager---so you apt/yum inplace of that use package
+state=present---install
+state=absent--unintsall
