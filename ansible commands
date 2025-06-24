@@ -30,4 +30,15 @@ we dn't use high fork values------if your control node doesn't have enough resou
 ______________________________________________________________________________________
 file operations
 file modules,stat-complete details of files,copy,lineinfile--add/removes single line in a file,blockinfile,template modules--dynamic content , fetch------fetch files from remote m/cs to local m/c
+___________________________________________________________________________________________________________________________________________________________________________________
+Ansible modules:
+create a dir:
+ansible all -m ansible.builtin.file -a "path=/tmp/subhadra state=directory"
+will get details of file---stat--module
+--------------------------------------------------------------------------
+create a new file on all managed nodes:
+ansible all -m ansible.builtin.file-a "path=/temp/test state=touch mode='0755'"----------a new file test is created with permissions in the all nodes /tmp dir
+state=absent-----uninstall
+
+ansible all -m ansible.builtin.stat -a "path=/etc/passwd"
 
