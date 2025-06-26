@@ -62,3 +62,7 @@ installing packages:ansible all -m ansible.builtin.apt/yum -a "name=apache2 stat
 if we dn't know which packagemanager---so you apt/yum inplace of that use package
 state=present---install
 state=absent--unintsall
+____________________________________________________
+group all the servers which is dev, db, prod etc in inventory file for best practices_
+ansible dev --list----------it will list the servers
+ansible prod --list
