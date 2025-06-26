@@ -1,4 +1,20 @@
-
+ansible.cfg --It define default values for ansible operations, such as inventory source, host key,parallel excition limits i.e fork value
+priority of configuration file location------
+priority-1---export ansible_config
+         2---ansible dir
+         last---etc/----global values
+_____________________________________________________________________________________
+Ansible facts-
+Ansible facts are system or environment info that ansible automatically gathers from managed nodes using setup module
+types of info----version, RAM size, OS,
+FACTS are stored in dir or JSON format, make it easy to querry or use within ansible playbooks.
+what module we use for ansible facts-----setup module
+ansible all -m ansible.builtin.setup -a 'filter=ansible_distribution*'
+----------------------
+creating custom facts:
+create dir--/etc/ansible/facts.d 
+custom facts location-------ansible_local
+_________________________________________________________________________________________
 idempotency--Ansible tasks are designed to be idempotent,they will only make changes if the desired state is not already present on the managed node
 /etc/ssh/sshd_config
 Ansible commands to run file/script
