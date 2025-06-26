@@ -66,3 +66,11 @@ ____________________________________________________
 group all the servers which is dev, db, prod etc in inventory file for best practices_
 ansible dev --list----------it will list the servers
 ansible prod --list
+_________________________________________________________________________
+Inventory files types:
+static-----------we can enter the servers by user manually
+Dynamic-----A file that automatically fetches the managed nodes using code or logic without manual updates
+usage:
+1.esstential for cloud env with autoscalling,where the num of servers fluctuates
+@@@@@@@@@@@@@@      we use inventory plugins to fecth the currently running instances in AWS account.
+
