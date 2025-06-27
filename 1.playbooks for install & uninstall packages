@@ -3,17 +3,26 @@ install httpd in redhat and install appache2 in ubuntu
 
 ---
 -name:install httpd webserver
- hosts:all------------servers
+ hosts:all or {'env'}------------servers
  become:yes------------giving sudo user access/ permissions
  tasks:
    -name:install httpd
-   package: --------module-name
+   package: or yum also mention --------module-name
      name:httpd
      state:present
     when:ansible_os_family=="Redhat"
 
   -name:install Appache
-   package:
+   package: or apt also mention
      name:apache2
     state:present         if absent---unintsall 
     when:ansible_os_family=="Debian"
+
+
+run this palybook------------ansible-playbook webser.yml -e env=dev
+
+.yml or .yaml
+___________________
+in advanced playbook structure------------
+we also mention gather_facts:false--for disable, true for enable
+
