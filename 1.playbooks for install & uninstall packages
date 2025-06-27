@@ -4,7 +4,7 @@ install httpd in redhat and install appache2 in ubuntu
 ---
 -name:install httpd webserver
  hosts:all------------servers
- become:yes------------giving root permissions
+ become:yes------------giving sudo user access/ permissions
  tasks:
    -name:install httpd
    package: --------module-name
