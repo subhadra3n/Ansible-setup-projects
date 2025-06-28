@@ -17,12 +17,19 @@ install httpd in redhat and install appache2 in ubuntu
      name:apache2
     state:present         if absent---unintsall 
     when:ansible_os_family=="Debian"
+__________________________________________________________________________________________________________________________
+
+before running playbook use this command as well----------ssh ubuntu@172.31.32.142
+
+ansible -i hosts.ini all -m ping----------inventory file name
+
+check is it conrol server is connecting to node or not
+use this command--------ansible -i hosts.ini all -m ping
 
 
-run this palybook------------ansible-playbook webser.yml -e env=dev
-
+run this palybook------------
 .yml or .yaml
-___________________
+______________________________________________________________________________________________________________________
 in advanced playbook structure------------
 we also mention gather_facts:false--for disable, true for enable
 
