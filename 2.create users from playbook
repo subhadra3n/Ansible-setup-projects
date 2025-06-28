@@ -1,0 +1,19 @@
+---
+- name: Create a basic user without password or SSH key
+  hosts: all
+  become: yes  # Use sudo to create the user
+
+  vars:
+    new_user: johndoe
+    user_shell: /bin/bash
+
+  tasks:
+    - name: Create the user
+      user:
+        name: "{{ new_user }}"
+        shell: "{{ user_shell }}"
+        state: present
+        create_home: yes
+
+
+ ansible-playbook -i hosts.ini user.yaml
