@@ -1,3 +1,16 @@
 1.Ansible is installed in only managerial/control node
 not req to install ansible in all agents---only python + ssH connection is enough---agentless 
 _______________________________________________________________________________________________________
+
+ansible variables:types:
+custom---vars:
+registerd variables
+facts
+inventory variables
+default variables
+_______________________
+vars:
+a=2
+b=3
+"a value is {{a}}" 
+
