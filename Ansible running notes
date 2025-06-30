@@ -17,3 +17,22 @@ ____________________________________________
 filters & methods in ansible:
 filters are applied using a pipeline and are specific to ansible
 methods follow(.)notation,invoking python methods directly on variables and data
+
+
+Filters:
+Filters in Ansible are used to transform or format data in Jinja2 templates or variables.
+
+🧠 Think of them like pipes (|) that modify values.
+
+
+{{ mylist | length }}
+✅ Methods:
+Methods are built-in functions that operate directly on Python data types like strings, lists, or dictionaries.
+
+🧠 Think of them like .function() used on variables.
+
+Example:
+
+{{ mystring.upper() }}
+🧠 Quick Tip to Remember:
+"Filters format, methods manipulate."
