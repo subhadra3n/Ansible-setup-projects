@@ -13,4 +13,7 @@ vars:
 a=2
 b=3
 "a value is {{a}}" 
-
+____________________________________________
+filters & methods in ansible:
+filters are applied using a pipeline and are specific to ansible
+methods follow(.)notation,invoking python methods directly on variables and data
