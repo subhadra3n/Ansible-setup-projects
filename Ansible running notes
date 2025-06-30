@@ -67,3 +67,26 @@ tasks:
   import_tasks:new.yaml
 when:
 ______________________-----------------
+____________________________-
+handlers
+
+we should mention notify also
+handlers-----starting, stop,restrat----------when condition----also works like this only
+when:nginix installation changed
+___________________________________
+tags:
+want to excute specific tasks--tags
+1.always--tag
+2.never-tag
+if you give both--it pics always---always runs
+eg:
+tags:
+first
+always
+
+second
+never-------it won't run
+if we keep imp also---it will run
+__________________________
+error handling in ansible:
+
