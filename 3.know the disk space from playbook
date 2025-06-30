@@ -1,0 +1,14 @@
+---
+- name: Check disk space on root partition
+  become: yes
+  hosts: all
+  tasks:
+    - name: Check disk space
+      ansible.builtin.shell: df -h / | tail -n 1 | awk '{print $5}' | tr -d '%'
+      register: diskspace
+      changed_when: false
+
+    - name: Alert if disk space is >60%
+      ansible.builtin.debug:
+        msg: "Warning: Disk space usage on root has reached above 60%"
+      when: diskspace.stdout | int > 60
