@@ -10,5 +10,5 @@
 
     - name: Alert if disk space is >60%
       ansible.builtin.debug:
-        msg: "Warning: Disk space usage on root has reached above 60%"
+        msg: "Warning: Disk space {{diskspace .stdout}} usage on root has reached above 60%"
       when: diskspace.stdout | int > 60
