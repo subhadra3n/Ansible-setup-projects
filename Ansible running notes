@@ -36,3 +36,34 @@ Example:
 {{ mystring.upper() }}
 🧠 Quick Tip to Remember:
 "Filters format, methods manipulate."
+_______________________________________________
+conditional statements can be use in ansible------------when:
+it controls the excution of tasks based on condition
+when:a>b
+when:b>a
+___________________________________________________________
+become, become_user, become_method
+become---yes--------ansible to excute the task with elevated privaleges
+become_user:default is root, but can be any user
+eg:
+become:yes
+become_user:root
+become_method:sudo
+______________-
+become:yes
+become_user:db_admin
+becom_method:su
+_______________________
+import_task:like modules to use any playbooks--used for only static
+include_task:dynamically calls
+_____________________________________________________
+usage:
+vi new.yaml
+vi install_nginix.yaml
+---
+-name:
+tasks:
+ -name:
+  import_tasks:new.yaml
+when:
+______________________-----------------
