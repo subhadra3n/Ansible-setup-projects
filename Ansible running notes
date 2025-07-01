@@ -1,3 +1,9 @@
+
+
+if any thing rc=0------------installed
+if any thing rc>=1--------not installed__________
+
+
 1.Ansible is installed in only managerial/control node
 not req to install ansible in all agents---only python + ssH connection is enough---agentless 
 _______________________________________________________________________________________________________
@@ -89,4 +95,24 @@ never-------it won't run
 if we keep imp also---it will run
 __________________________
 error handling in ansible:
+1.ignore_errors,---------continue excuting, even if certain task fails
+syntax:ignore_errors:true
+it allows the playbook to proceed or run with subsequent tasks otherwise halt the playbook execution for troubleshooting.
+2.failed_when, --exmp:-it set to failed, if ngnix is installed
+3.fail module------the fail module provides a direct way to halt playbook execution, at what conditions playbook shouldn't proceed
+________________________________________________________________________________________________________________________________________
+Block
+rescue
 
+tasks:
+-name:attempt ngnix installation
+block:
+  -name:check if ngnix installed
+failed_when: ngnix rc!=0--------if not installed ngnix fail the block
+rescue:
+ -name: install ngnix
+____________________________
+Ansible log files:
+
+
+ 
