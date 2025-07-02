@@ -113,6 +113,36 @@ rescue:
  -name: install ngnix
 ____________________________
 Ansible log files:
+we should mention the path of log files in ansible.cfg file---create a dir and mention the path
+in that dir logs will be available
+_____________________________________________
+Ansible valut
+Ansible dynamic inventory
+Ansible roles
+Ansible plugins------------modules---------resuable
+                            plugins--add new functionality to the ansible operations extending its capabilities beyond the execution of tasks
+plugins types:
+become plugins
+filter plugins
+inventory plugins---dynamically generate invetory from external sources or formats
+
+ansible-galaxy collection installamazon.aws -p dirname-------create one dir mention the name here--mention path in ansible.cfg file
+if these plugins can be work in your server control-node we should install these::::::::::
+pip3 install botocore --user
+pip3 insatll boto3 --user
+check versions now 
+ansible-galaxy collection list
+________________________
+dynamic inventory plugin:
+vi aws_ec2_dynamic.yaml
+---
+plugin:amazon.aws.aws_ec2
+aws_access_key:
+aws_secret_key:
+regions:
+ -us.east1
+ -us.east2
+
 
 
  
