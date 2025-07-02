@@ -116,9 +116,43 @@ Ansible log files:
 we should mention the path of log files in ansible.cfg file---create a dir and mention the path
 in that dir logs will be available
 _____________________________________________
-Ansible valut
+Ansible valut---Encrypts files to securely mask &store secrets, like passwords, keys or any sensitive data within ansible playbooks or yaml files
+create a file---ec2.yaml
+---
+---
+write something and check now--its totally in display in encription of data format
+ansible-valut encrypt aws_playbook.yaml
+enter pasword here---
+it displays encryption succ
+if we want to edit data of a file----ansible-valut edit ec2.yaml
+enter password---------you will get data and edit it-----then only i can see this file
+for viewing the file
+ansible-valut view ec2.yaml
+rekey----asks for new password
+______________-
+we also encrypt keys:
+ansible_valut encrypt_string key,  decrypt
+
+_________________________________
 Ansible dynamic inventory
+________________________________________________________________________________________________________________________
+
+
 Ansible roles
+____________________________
+
+
+simplifies playbook by modulising componentsm making playbooks easier to understand maintain & reuse
+it provides complexity, reusability, organization
+ansibile-galaxy-init--------------it will initialize the role structure template
+--templates------index.j2
+--tasks
+--defaults
+--files
+---handlers
+---vars
+--metas______
+for evry folder we have main.yaml file_______________________________________________________________________________________________
 Ansible plugins------------modules---------resuable
                             plugins--add new functionality to the ansible operations extending its capabilities beyond the execution of tasks
 plugins types:
@@ -143,6 +177,11 @@ regions:
  -us.east1
  -us.east2
 
+creating these all we are directly using shell script to fetch ip address dynamically------just install aws cli----its working fine best option 
+_________________________________________________________________________________________________________________
+Raw module-----------
+if pyton is not available in nodes---it will also work using raw module
+if we have python use modules directly
 
 
  
